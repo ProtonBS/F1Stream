@@ -166,12 +166,54 @@ div.ad {
   margin: auto;
   padding: 5px;
 }
+
+<!-- -->
+  .logo-container {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: -10px; /* Adjust this value to control the vertical spacing */
+    }
+
+    .rotating-image {
+        max-height: 40px;
+        animation: rotate 0.8s linear infinite;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .static-image {
+        max-height: 40px;
+    }
+	
 </style>
+
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+        <div class="logo-container">
+            <img class="rotating-image" src="https://i.ibb.co/3sxGVLv/11091202.png" alt="Your Logo" style="max-height: 45px;">
+        </div>
+        <div class="logo-container">
+            <img class="static-image" src="https://i.ibb.co/MgfgR74/Screenshot-2024-02-29-14-58-19-014-com-android-chrome-removebg-preview.png" alt="Image 2" style="max-height: 40px;">
+        </div>
+    </a>
+</nav>
+	
+	
 <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=65e0390f24aed100195a79cb&product=inline-share-buttons&source=platform" async="async"></script>
 <head>
 <div class="topnav">
   <div class="topnavmaterial">
-  <a href="https://f1stream.vercel.app/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/60Z7MBG/F1stream-Vercel-App-Logo.png" /></a>
+  <a href="https://f1stream.vercel.app/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/MgfgR74/Screenshot-2024-02-29-14-58-19-014-com-android-chrome-removebg-preview.png" /></a>
   </div>
 </div>
 <body>
