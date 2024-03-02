@@ -1,1 +1,348 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>F1Stream.Vercel.App - WEC</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<meta content="F1Stream.Vercel.App Streams" property="og:title" />
+<meta content="Watch Motorsport in HD with F1Stream.Vercel.App Streams" property="og:description" />
+<meta content="https://f1stream.vercel.app/" property="og:url" />
+<meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:400,700" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
 
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W9MBHEVCM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3W9MBHEVCM');
+  </script>
+
+  <style>
+@font-face {
+    font-family: 'DIN-Pro';
+    src: url('https://latifistreams.com/DINPro.eot');
+    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
+        url('https://latifistreams.com/DINPro.woff') format('woff'),
+        url('https://latifistreams.com/DINPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #232323;
+      margin: 0;
+    }
+	  
+    .column1 {
+      float: left;
+      width: 70%;
+      padding: 10px;
+      height: 700px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    .column2 {
+      float: left;
+      width: 30%;
+      padding: 10px;
+      height: 700px;
+
+      /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 900px) {
+      .column1 {
+        width: 100%;
+      }
+
+      .column2 {
+        display: none;
+      }
+
+    }
+	  
+    .topnav {
+      overflow: hidden;
+      background-color: #000;
+      width: 100%;
+      height: 69px;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
+    }
+
+    .topnavmaterial {
+      width: 1450px;
+      margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 750px) {
+      .topnavmaterial {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: 'DIN-Pro', sans-serif;
+    }
+
+    h1 {
+      font-family: DIN-Pro, sans-serif;
+      font-size: 29px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: DIN-Pro;
+      font-size: 19px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    div.main {
+      height: 1000px;
+      width: 90%;
+      margin: auto;
+      padding-top: 100px;
+    }
+
+    @media screen and (max-width: 800px) {
+      div.main {
+        height: 1000px;
+        width: 95%;
+	margin: auto;
+        padding-top: 100px;
+      }
+    }
+
+    div.ad1 {
+      height: auto;
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      padding: 5px;
+    }
+	  
+    div.ad {
+      height: auto;
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      padding: 5px;
+    }
+
+    .btn {
+      background: #00a3e0;
+      padding: 10px 10px;
+      border: 0px;
+      font-family: DIN-Pro;
+      transition: 0.3s;
+      margin-bottom: 5px;
+    }
+
+    .btn:hover {
+      background: #e40046
+    }
+
+    .btn:focus {
+      background: #fff
+    }
+
+    .title {
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .chatmobile {
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	height: 55px;
+	background-color: #111;
+	display: flex;
+	align-items: center;
+      }
+
+     .chatmobile a {
+	color: white;
+	font-family: DIN-Pro;
+	font-size: 18px;
+	margin: auto;
+	text-decoration: none;
+	display: flex;
+     }
+
+     .chatmobile a:hover {
+	color: #00a3e0;
+	transition: 1s
+     }
+
+     @media screen and (min-width: 900px) {
+       .chatmobile {
+	 display: none;
+       }
+    }
+
+  </style>
+
+<body>
+
+  <body class="base">
+    <div class="topnav">
+      <div class="topnavmaterial">
+        <a href="https://f1stream.vercel.app/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/60Z7MBG/F1stream-Vercel-App-Logo.png" /></a>
+      </div>
+    </div>
+    <div class="main">
+      <h1>QATAR 1812KM</h1>
+      <div class="row">
+        <div class="column1" style="background-color:#;">
+          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/clappr?url=aHR0cHM6Ly9kYS1kNTBkMTJiNS5vbmxpbmUubWVvLnB0L3dwL2Nkbi1lci12c3BwLWN2bDIub25saW5lLm1lby5wdC9zaGxzL0xJVkUkRXVyb3Nwb3J0XzJfSEQvaW5kZXgubTN1OC9TIWQyRUlTVTlUWDB4cGRtVVNCa1BJUzFYRFZQNy4uLjhCRmd5Zi9MZXZlbCgyMTAwMDAwKQ=='">Stream 1</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://en.gdplayertv.top/embed/eurosport-2/?autoplay=true'">Stream 2</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.se/embed/euro2.php'">Stream 3</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-42.php'">Stream 4</button>
+	  <!--<button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 5</button>
+	  <!--<button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 6</button>
+	  <!--<button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 5</button>		
+	  <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.se/embed/ps2.php'">Stream 6 [INT.]</button>-->
+	  <iframe id="iframe" src="https://latifistreams.com/channel/clappr?url=aHR0cHM6Ly9kYS1kNTBkMTJiNS5vbmxpbmUubWVvLnB0L3dwL2Nkbi1lci12c3BwLWN2bDIub25saW5lLm1lby5wdC9zaGxzL0xJVkUkRXVyb3Nwb3J0XzJfSEQvaW5kZXgubTN1OC9TIWQyRUlTVTlUWDB4cGRtVVNCa1BJUzFYRFZQNy4uLjhCRmd5Zi9MZXZlbCgyMTAwMDAwKQ==" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+	  
+          <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
+          <script>
+        $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
+        $('.btn').click(function(){
+        $('.btn').css({"box-shadow":""});
+        $(this).css({"box-shadow":"0px 5px 0px #e40046 inset"});
+        });
+            var TheaterModeActivated = false
+            function TheaterMode() {
+              if (TheaterModeActivated) {
+                TheaterModeActivated = false; 
+                $(".topnav").css({ "display": "" });
+                $(".column1").css({ "height": "700px" });
+                $(".main").css({ "width": "" });
+                $(".column2").css({ "height": "700px" });
+                $(".ad").css({ "display": "" });
+                $("footer").css({ "display": "" });
+                $(".row").css({ "position": "", "top": "", "transform": "", "width": "100%", "height": "100%", "margin": "" });
+              }
+              else {
+                TheaterModeActivated = true;
+                $(".topnav").css({ "display": "none" });
+                $(".column1").css({ "height": "101.765%" });
+                $(".main").css({ "width": "100%" });
+                $(".column2").css({ "height": "100%" });
+                $(".ad").css({ "display": "none" });
+                $("footer").css({ "display": "none" });
+                $(".row").css({ "position": "absolute", "top": "50%", "transform": "translateY(-50%)", "width": "100%", "height": "100%", "margin": "0" });
+              }
+            }
+          </script>
+        </div>
+       <!-- <div class="column2" style="background-color:#;">
+          <iframe src="https://www.twitch.tv/embed/latifistreams/chat?darkpopout&amp;parent=latifistreams.com" height="100%" width="100%" frameborder="0"></iframe>
+      	</div>
+      </div>
+    </div>
+    <!--<div class="ad1">
+      <a href="https://x.com/news_rpm?s=21" target="_blank"><img
+          src="https://media.discordapp.net/attachments/1157085385009139732/1159927860925042819/IMG_2463.jpg"
+          style="width:100%;height:auto;"></a>
+    </div>
+    <div class="ad">
+      <a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img
+          src="https://media.discordapp.net/attachments/839307058674139139/1033433326385639424/llsdsc.png"
+          style="width:100%;height:auto;"></a>
+      <h2>Use an adblocker for the best experience.</h2>
+    </div>
+    </div>
+      <div class="chatmobile">
+	<a href="https://www.twitch.tv/popout/latifistreams/chat" target="_blank">Click here to view chat
+	<svg style="color: white; margin-left: 5px;" width="25" height="25" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 13C12.5523 13 13 12.5523 13 12V3C13 2.44771 12.5523 2 12 2H3C2.44771 2 2 2.44771 2 3V6.5C2 6.77614 2.22386 7 2.5 7C2.77614 7 3 6.77614 3 6.5V3H12V12H8.5C8.22386 12 8 12.2239 8 12.5C8 12.7761 8.22386 13 8.5 13H12ZM9 6.5C9 6.5001 9 6.50021 9 6.50031V6.50035V9.5C9 9.77614 8.77614 10 8.5 10C8.22386 10 8 9.77614 8 9.5V7.70711L2.85355 12.8536C2.65829 13.0488 2.34171 13.0488 2.14645 12.8536C1.95118 12.6583 1.95118 12.3417 2.14645 12.1464L7.29289 7H5.5C5.22386 7 5 6.77614 5 6.5C5 6.22386 5.22386 6 5.5 6H8.5C8.56779 6 8.63244 6.01349 8.69139 6.03794C8.74949 6.06198 8.80398 6.09744 8.85143 6.14433C8.94251 6.23434 8.9992 6.35909 8.99999 6.49708L8.99999 6.49738" fill="white"></path> </svg></a>
+      </div> -->
+    </div> 
+    </section>
+    <style>
+      @font-face {
+        font-family: DIN-Pro;
+        src: url('DIN-Pro.ttf');
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #000;
+        color: #ffffff;
+        font-family: 'DIN-Pro', sans-serif;
+      }
+
+      h3 {
+        font-size: 12px;
+        font-family: 'DIN-Pro', sans-serif;
+      }
+
+      a {
+        color: #ffffff;
+        background-color: transparent;
+        text-decoration: underline;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      a:hover {
+        color: #ff5151;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    </style>
+
+    <footer>
+      <a href="https://f1stream.vercel.app/"><img style="display:block; margin:auto; margin-top:5px" width="300px"
+          height="100%" src="https://i.ibb.co/60Z7MBG/F1stream-Vercel-App-Logo.png" /></a>
+      
+      <!-- Adsterra POPunder --><center>
+  
+  <script type='text/javascript' src='//pl22660263.profitablegatecpm.com/71/d3/2d/71d32daaa4feb24cdd7dcb76136c1e55.js'></script>
+  
+   <!-- Adsterra PopUnder --></center>
+      
+      
+    </footer>
+      </head>
+</html>
+  <!-- Ⓒ 2024 F1Stream.Vercel.App-->
