@@ -159,6 +159,67 @@ div.ad {
 }
 
 
+
+
+
+
+:root{ --color:#00fff9; }
+.loader{
+    width: 100px;
+    height: 100px;
+    margin: 30px auto 0;
+    position: relative;
+}
+.loader .inner-loader{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    animation: animateLoading 2s linear infinite;
+}
+.loader .inner-loader:nth-child(2),
+.loader .inner-loader:nth-child(4){
+    animation-delay: -1s;
+    filter: hue-rotate(290deg);
+}
+.loader .inner-loader:nth-child(1):before,
+.loader .inner-loader:nth-child(2):before{
+    content: '';
+    background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.5));
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.loader .inner-loader i{
+    background: var(--color);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    box-shadow: 0 0 10px var(--color),0 0 20px var(--color),0 0 30px var(--color),0 0 40px var(--color),
+                0 0 50px var(--color),0 0 60px var(--color);
+}
+.loader .inner-loader span{
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+@keyframes animateLoading{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+	
 	
 </style>
 	
@@ -168,6 +229,7 @@ div.ad {
 	
 <body>
 
+	
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
@@ -176,6 +238,8 @@ div.ad {
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 	
 <h1>F1stream.Vercel.App</h1>
+  
+  
 <h2>Countdown to 2024 Bahrain Grand Prix:</h2>
 <!-- Display the countdown timer in an element -->
 <div class="bruh"><p style="font-size:32px;" id="demo"></p></div>
@@ -213,7 +277,16 @@ var x = setInterval(function() {
 
 <div class="streamtable">
   <div class="stream" onclick="location.href='/motorsport.html';">
-    <h2>➪ Live Formula1 Streams</h2>
+    <h2>➪ Live Formula1 Streams
+    
+      <div class="loader">
+    <div class="inner-loader"><span></span></div>
+    <div class="inner-loader"><span></span></div>
+    <div class="inner-loader"><i></i></div>
+    <div class="inner-loader"><i></i></div>
+</div>
+    
+    </h2>
   </div>
   <!-- <div class="stream" onclick="location.href='/soccer';">
     <h2>Soccer Streams</h2>
